@@ -5,13 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ConverterActivity">
+    tools:context=".ConverterActivity"
+    tools:ignore="Autofill"
+    tools:targetApi="KITKAT">
 
     <TextView
         android:id="@+id/tvAppDesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enter the value to be converted below:"
+        android:text="@string/tvAppDesc"
         android:textSize="18sp" />
 
     <TableLayout
@@ -24,25 +26,104 @@
             android:layout_weight="1">
 
             <TextView
-                android:id="@+id/tvBinary"
+                android:id="@+id/tvInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Binary: "
+                android:text="@string/binary"
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/etBinary"
+                android:id="@+id/etInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Binary Representation"
-                android:inputType="number"
+                android:inputType="text"
+                android:hint="@string/etInput"
                 android:layout_weight="1"/>
-
-
         </TableRow>
 
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
 
+            <TextView
+                android:id="@+id/tvBinDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/binary"
+                android:textSize="18sp" />
 
+            <TextView
+                android:id="@+id/tvBinary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+        </TableRow>
+
+        <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tvHexDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/hexadecimal"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvHexadecimal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tvDecDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/decimal"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvDecimal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+        </TableRow>
     </TableLayout>
+
+
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btnClear"
+        android:onClick="onClear"/>
+
+
+    <Button
+        android:id="@+id/btnConvert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btnConvert"
+        android:onClick="onConvert"/>
+
+    <Button
+        android:id="@+id/btnSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btnDataType"
+        android:onClick="onSettings"/>
+
 </android.support.v7.widget.LinearLayoutCompat>

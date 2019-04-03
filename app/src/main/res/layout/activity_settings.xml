@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SettingsActivity">
+
+    <TextView
+        android:id="@+id/tvDataType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/tvDataType"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btnBin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/binary"
+        android:onClick="onChoose"/>
+
+    <Button
+        android:id="@+id/btnHex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hexadecimal"
+        android:onClick="onChoose"/>
+
+    <Button
+        android:id="@+id/btnDec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/decimal"
+        android:onClick="onChoose"/>
+
+</android.support.v7.widget.LinearLayoutCompat>
