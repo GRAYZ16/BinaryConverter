@@ -1,25 +1,24 @@
 <resources>
     <string name="app_name">BinaryConverter</string>
 
-
-    <!-- Converter Activity Strings -->
-    <string name="tvAppDesc">Enter the value to be converted below:</string>
-
-    <string name="etInput">Input</string>
-
-    <string name="tvSuffix">%s:</string>
-
+    <!-- Generic App Strings-->
     <string name="binary">Binary</string>
     <string name="hexadecimal">Hexadecimal</string>
     <string name="decimal">Decimal</string>
+
+    <!-- Converter Activity Strings -->
+    <string name="tvAppDesc">Enter the value to be converted below:</string>
+    <string name="tvSuffix">%s:</string>
+
+    <string name="etInput">Input</string>
 
     <string name="btnConvert">Convert</string>
     <string name="btnClear">Clear</string>
     <string name="btnDataType">Input Format</string>
 
+    <string name="invalidInput">Invalid Input</string>
+
 
     <!-- Settings Activity Strings -->
     <string name="tvDataType">Choose Input Format:</string>
-
-
 </resources>

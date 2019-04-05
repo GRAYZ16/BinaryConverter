@@ -2,30 +2,33 @@ package au.edu.jcu.cp3406.binaryconverter;
 
 public class Converter
 {
-    public static final int BINARY = 0;
-    public static final int HEX = 1;
-    public static final int DECIMAL = 2;
+    // Accepted Data Formats
+    static final int BINARY = 0;
+    static final int HEX = 1;
+    static final int DECIMAL = 2;
 
+    // Storing the conversion  value as a binary string
     private String binaryRepresentation;
 
+    // Default constructor assumes a value of 0 in binary form
     public Converter()
     {
         this("0", BINARY);
     }
 
-    public Converter(String value, int dataType)
+    public Converter(String value, int numberFormat)
     {
-        setValue(value, dataType);
+        setValue(value, numberFormat);
     }
 
-    public void setValue(String value, int dataType)
+    // Set the value of the converter to a new number with a given numberFormat
+    void setValue(String value, int numberFormat)
     {
-
         // Convert value to storage base (binary)
-        switch(dataType)
+        switch (numberFormat)
         {
             case BINARY:
-                binaryRepresentation = value;
+                convertFromBinary(value);
                 break;
 
             case HEX:
@@ -34,7 +37,20 @@ public class Converter
 
             case DECIMAL:
                 convertFromDecimal(value);
+                break;
         }
+    }
+
+    /*
+     *  This code block is added to ensure any formatting errors are caught when executing the
+     *  setValue function. As default Long.parseLong throws NumberFormatException to the class that
+     *  executes setValue when String value does not match the formatting of numberFormat.
+     *  Functionally, this code block is redundant but streamlines the invalid format detection.
+     */
+    private void convertFromBinary(String value)
+    {
+        Long input = Long.parseLong(value, 2);
+        binaryRepresentation = Long.toBinaryString(input);
     }
 
     private void convertFromHex(String value)
@@ -46,23 +62,22 @@ public class Converter
     private void convertFromDecimal(String value)
     {
         long input = Long.parseLong(value);
-
         binaryRepresentation = Long.toBinaryString(input);
 
     }
 
-    public String getBinaryRepresentation()
+    String getBinaryFormat()
     {
         return binaryRepresentation;
     }
 
-    public String getHexRepresentation()
+    String getHexadecimalFormat()
     {
         long value = Long.parseLong(binaryRepresentation, 2);
         return Long.toHexString(value).toUpperCase();
     }
 
-    public String getDecimalRepresenation()
+    String getDecimalFormat()
     {
         long value = Long.parseLong(binaryRepresentation, 2);
         return Long.toString(value);
